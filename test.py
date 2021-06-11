@@ -7,12 +7,13 @@ from tkinter import *
 
 FIELD = []
 MINEFIELD = []
-SIZE_X = 10
-SIZE_Y = 10
-MINE_COUNT = 10
+SIZE_X = 50
+SIZE_Y = 50
+MINE_DENCETY=10
+MINE_COUNT = int(SIZE_X*SIZE_Y*(MINE_DENCETY/100))
 OPEN_COUNT = 0
 MARK_COUNT = 0
-TILE_SIZE = 50
+TILE_SIZE = 10
 
 
 def item_clicked(event):
@@ -24,6 +25,24 @@ def item_clicked(event):
 
 
     print(item)
+
+
+def Victory():
+    
+    l=Label(root,text="victory")
+    l.pack()
+    open_all()
+    input()
+
+def open_all():
+    for row in range(SIZE_Y):
+        for cell in range(SIZE_X):
+            if MINEFIELD[row][cell]!='m':
+                FIELD[row][cell].open_cell()
+                root.update()
+    
+
+
 
 class Tile():
     def __init__(self,row,cell) -> None:
@@ -49,6 +68,43 @@ class Tile():
 
         else:
             c.itemconfig(self.tile,fill="white")
+        self.open=True
+
+    def mark_cell(self):
+        if not self.marked:
+            self.marked=True
+            c.itemconfig(self.tile,fill="blue")
+            global MINEFIELD,MARK_COUNT
+            content=MINEFIELD[self.row][self.cell]
+            if content=="m":
+                MARK_COUNT+=1
+                if MARK_COUNT==MINE_COUNT:
+                    Victory()
+
+
+    def AI_attention(self):
+        c.itemconfig(self.tile,fill="yellow")
+
+    def AI_leave(self):
+        
+        if self.open:
+            global MINEFIELD
+            content=MINEFIELD[self.row][self.cell]
+            if content=='m':
+                c.itemconfig(self.tile,fill="red")
+
+            elif content:
+                c.itemconfig(self.tile,fill="green")
+                
+
+            else:
+                c.itemconfig(self.tile,fill="white")
+
+        elif self.marked:
+            c.itemconfig(self.tile,fill="blue")  
+
+        else:
+            c.itemconfig(self.tile,fill='grey')    
 
 
             
@@ -68,4 +124,41 @@ for row in range(SIZE_Y):
 
 FIELD = [[Tile(row,cell) for cell in range(SIZE_X)] for row in range(SIZE_Y)]
 
-root.mainloop()
+#root.mainloop()
+
+FIELD[0][0].open_cell()
+while True:
+    for row in range(SIZE_Y):
+        for cell in range(SIZE_X):
+            c_tile= FIELD[row][cell]
+
+            if c_tile.open:
+                neighbours=matrixFunctions.find_neighbours(MINEFIELD,cell,row)
+                neighbours_tiles=[FIELD[m_row][m_cell] for m_row,m_cell in neighbours]
+                marks=len([tile for tile in neighbours_tiles if tile.marked ])
+                closed=[tile for tile in neighbours_tiles if not tile.open ]
+
+                if closed and len(closed)>marks:
+
+                    FIELD[row][cell].AI_attention()                
+                    tile_content=MINEFIELD[row][cell]                    
+
+                    
+                    if tile_content==0 :                         
+                        for tile in neighbours_tiles:
+                            
+                            tile.open_cell()
+                    elif len(closed)==tile_content :
+                        for tile in closed:
+                            
+                            tile.mark_cell()
+
+                    elif marks==tile_content :
+                        for tile in closed :
+                            if not tile.marked:
+                                tile.open_cell()
+
+
+                    root.update()
+                    FIELD[row][cell].AI_leave()
+
