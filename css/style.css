@@ -1,70 +1,87 @@
-.white-container{
+.white-container {
     display: flex;
-    background: linear-gradient(-135deg,#c850c0,#4158d0);
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
     justify-content: center;
 }
 
-.game-holder{
+.game-holder {
     background: red;
-    width:600px;
-    height:700px;
+    width: 600px;
+    height: 700px;
 }
 
-.description{
-    height:700px;
-    width:300px;
+.description {
+    height: 700px;
+    width: 300px;
     background: white;
 }
 
-.game{
-    height:600px;
-    width:600px;
+.game {
+    height: 600px;
+    width: 600px;
     background: blue;
 }
-.top-bar{
-    height:100px;
-    width:600px;
+
+.top-bar {
+    height: 100px;
+    width: 600px;
     background: green;
     display: flex;
     justify-content: center;
-    align-items:center;
-
+    align-items: center;
 }
 
-.diff-selector{
-    height:50px;
-    width:100px;
+.diff-selector {
+    height: 50px;
+    width: 100px;
     background: white;
-    margin:20px;
+    margin: 20px;
 }
 
-.button{
-    height:50px;
-    width:100px;
+.button {
+    height: 50px;
+    width: 100px;
     background: white;
-    margin:20px;
+    margin: 20px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
-.mine-counter{
-    height:50px;
-    width:100px;
+.mine-counter {
+    height: 50px;
+    width: 100px;
     background: white;
-    margin:20px;
+    margin: 20px;
 }
 
-.timer{
-    height:50px;
-    width:100px;
+.timer {
+    height: 50px;
+    width: 100px;
     background: white;
-    margin:20px;
+    margin: 20px;
 }
 
-.sound{
-    height:50px;
-    width:100px;
+.sound {
+    height: 50px;
+    width: 100px;
     background: white;
-    margin:20px;
+    margin: 20px;
+}
+
+.mine-cell {
+    box-sizing: border-box;
+    border: solid black;
+}
+
+.mine-cell-active {
+    background: white;
+}
+
+.mine-cell-inactive {
+    background: gray;
+}
+
+.minefield {
+    border-collapse: collapse;
 }
