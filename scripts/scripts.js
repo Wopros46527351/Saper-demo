@@ -1,3 +1,6 @@
+let good = false;
+let fast = false;
+let cheap = false;
 
 function hello() {
     const size_x = 10
@@ -29,3 +32,29 @@ function hello() {
 }
 
 
+function s_cheap(){
+    let elem = document.getElementById('cheap')
+    cheap = elem.checked;
+    if (cheap && good && fast){
+        fast = false;
+        document.getElementById('fast').checked = false;
+    }
+}
+
+function s_fast(){
+    let elem = document.getElementById('fast')
+    fast = elem.checked;
+    if (cheap && good && fast){
+        good = false;
+        document.getElementById('good').checked = false;
+    }
+}
+
+function s_good(){
+    let elem = document.getElementById('good')
+    good = elem.checked;
+    if (cheap && good && fast){
+        cheap = false;
+        document.getElementById('cheap').checked = false;
+    }
+}
