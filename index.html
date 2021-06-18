@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Привет!</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="text/javascript" src="./scripts/scripts.js"></script>
+</head>
+<body>
+    <div class="gray-container">
+        <div class="switch-holder">
+            <label class="switch">
+                <input type="checkbox" onchange="s_cheap()" id = "cheap">
+                <span class="slider round" id="red"></span>
+            </label>
+            <p>Cheap</p>
+        </div>
+        <div class="switch-holder">
+            <label class="switch">
+                <input type="checkbox" onchange="s_good()" id = "good">
+                <span class="slider round" id="blue"></span>
+            </label>
+            <p>Good</p>
+        </div>
+        <div class="switch-holder">
+            <label class="switch">
+                <input type="checkbox" onchange="s_fast()" id = "fast">
+                <span class="slider round" id="green"></span>
+            </label>
+            <p>Fast</p>
+        </div>
+    </div>
+    <div class="white-container">
+        <div class="game-holder">
+            <div class="top-bar">
+                <div class="diff-selector"></div>
+                <div class="button">
+                    <button id="button" onclick="hello()">Press</button>
+                </div>
+                <div class="mine-counter"></div>
+                <div class="timer"></div>
+                <div class="sound"></div>
+            </div>
+            <div class="game" id="game-holder"></div>
+        </div>
+        <div class="description">
+            <p>Развернутое описание, ссылочки и прочие радости</p>
+        </div>
+    </div>
+</body>
