@@ -28,10 +28,18 @@
             <p>Fast</p>
         </div>
     </div>
+
+
     <div class="white-container">
         <div class="game-holder">
             <div class="top-bar">
-                <div class="diff-selector"></div>
+                <div class="diff-selector">
+                    <select name = "diffs" id = "diff-select">
+                        <option value = "easy">Easy</option>
+                        <option value = "med" selected = "selected">Medium</option>
+                        <option value = "hard">Hard</option>
+                    </select>
+                </div>
                 <div class="button">
                     <button id="button" onclick="hello()">Press</button>
                 </div>
