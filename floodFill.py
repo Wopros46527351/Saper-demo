@@ -1,13 +1,7 @@
 import os
+from tkinter import *
+from minesweeper import Tile
 
-test_matrix = [
-    [0,0,0,1,0,0,0],
-    [0,0,0,1,0,0,0],
-    [0,0,0,1,0,0,0],
-    [1,1,0,1,0,1,1],
-    [0,0,0,1,0,0,0],
-    [0,0,0,1,0,0,0],
-    [0,0,0,1,0,0,0]]
 
 def show(matrix):
     
@@ -32,7 +26,6 @@ def flood_fill_stack(matrix,y,x,match,fill):
     limit_x = len(matrix[0])
     stack = [(y,x)]
     while stack:
-        
         ty,tx = stack.pop()
         if matrix[ty][tx] == match:
             matrix[ty][tx] = fill
@@ -41,14 +34,34 @@ def flood_fill_stack(matrix,y,x,match,fill):
                     stack.append((ty+dy,tx+dx))
     return matrix
 
+#def flood_fill_rec_visual():
 
-def flood_fill_span(matrix,y,x,match,fill):
-    seeds = [(y,x)]
-    while
+#def flood_fill_span(matrix,y,x,match,fill):
+#    seeds = [(y,x)]
+#    while
 
-
-show(test_matrix)
-test_matrix = flood_fill_rec(test_matrix,0,0,0,2)
-show(test_matrix)
-test_matrix = flood_fill_stack(test_matrix,0,6,0,3)
-show(test_matrix)
+if __name__ == "__main__":
+    test_matrix = [
+    [0,0,0,1,0,0,0],
+    [0,0,0,1,0,0,0],
+    [0,0,0,1,0,0,0],
+    [1,1,0,1,0,1,1],
+    [0,0,0,1,0,0,0],
+    [0,0,0,1,0,0,0],
+    [0,0,0,1,0,0,0]]
+    show(test_matrix)
+    test_matrix = flood_fill_rec(test_matrix,0,0,0,2)
+    show(test_matrix)
+    test_matrix = flood_fill_stack(test_matrix,0,6,0,3)
+    show(test_matrix)
+    root = Tk()
+    c = Canvas(root,width=600,height=600,bg = "white")
+    c.pack()
+    for row in range(7):
+        for cell in range(7):
+            value = test_matrix[row][cell]
+            test_matrix[row][cell] = Tile(row,cell,True if value == 1 else False,c,50)
+    for row in range(7):
+        for cell in range(7):
+            test_matrix[row][cell].open()
+    root.mainloop()

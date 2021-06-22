@@ -1,46 +1,44 @@
 from tkinter import Tk,Canvas
 from matrixFunctions import *
 
-class Minesweeper():
-#<------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-#Child Tile Class
-    class Tile():
-        def __init__(self,row,cell,is_mine,canvas,tile_size) -> None:
-            self.parent_canvas=canvas
-            self.row = row
-            self.cell = cell
-            self.is_mine = is_mine
-            self.is_open = False
-            self.is_marked = False
-            self.tile = self.parent_canvas.create_rectangle(cell*tile_size+2,row*tile_size+2,(cell+1)*tile_size+2,(row+1)*tile_size+2,
-            fill = "gray",outline = "black")
-            self.text = self.parent_canvas.create_text((cell+0.5)*tile_size+2,(row+0.5)*tile_size+2,text="")
-            self.content = 0
-            self.mates = []
-        
-        def open(self):
-            if not self.is_open:
-                if self.is_mine:
-                    self.parent_canvas.itemconfig(self.tile,fill="red")
-                elif self.content:
-                    self.parent_canvas.itemconfig(self.tile,fill="green")
-                    self.parent_canvas.itemconfig(self.text,text = self.content)
-                else:
-                    self.parent_canvas.itemconfig(self.tile,fill="white")
-                self.is_open=True
 
-        def mark(self):
-            if not self.is_open:
-                if self.is_marked:
-                    self.is_marked = False
-                    self.parent_canvas.itemconfig(self.tile,fill="gray")
-                    return -1 if self.is_mine else 0
-                else:
-                    self.is_marked = True
-                    self.parent_canvas.itemconfig(self.tile,fill="blue")
-                    return 1 if self.is_mine else 0
-#<------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-#Futher class definitions
+class Tile():
+    def __init__(self,row,cell,is_mine,canvas,tile_size) -> None:
+        self.parent_canvas=canvas
+        self.row = row
+        self.cell = cell
+        self.is_mine = is_mine
+        self.is_open = False
+        self.is_marked = False
+        self.tile = self.parent_canvas.create_rectangle(cell*tile_size+2,row*tile_size+2,(cell+1)*tile_size+2,(row+1)*tile_size+2,
+        fill = "gray",outline = "black")
+        self.text = self.parent_canvas.create_text((cell+0.5)*tile_size+2,(row+0.5)*tile_size+2,text="")
+        self.content = 0
+        self.mates = []
+    
+    def open(self):
+        if not self.is_open:
+            if self.is_mine:
+                self.parent_canvas.itemconfig(self.tile,fill="red")
+            elif self.content:
+                self.parent_canvas.itemconfig(self.tile,fill="green")
+                self.parent_canvas.itemconfig(self.text,text = self.content)
+            else:
+                self.parent_canvas.itemconfig(self.tile,fill="white")
+            self.is_open=True
+
+    def mark(self):
+        if not self.is_open:
+            if self.is_marked:
+                self.is_marked = False
+                self.parent_canvas.itemconfig(self.tile,fill="gray")
+                return -1 if self.is_mine else 0
+            else:
+                self.is_marked = True
+                self.parent_canvas.itemconfig(self.tile,fill="blue")
+                return 1 if self.is_mine else 0
+
+class Minesweeper():
 #<------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 #Canvas click functions
     def open_cell(self,event):
@@ -74,7 +72,7 @@ class Minesweeper():
 #<------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 #rewrite to use decorators
         mines = random.sample(range(size_x*size_y),self.MINE_COUNT)
-        self.tiles = [[self.Tile(row,cell,row*size_x+cell in mines,self.canvas,self.TILE_SIZE) for cell in range(size_x)] for row in range(size_y)]
+        self.tiles = [[Tile(row,cell,row*size_x+cell in mines,self.canvas,self.TILE_SIZE) for cell in range(size_x)] for row in range(size_y)]
         for row in range(size_y):
             for cell in range(size_x):
                 self.tiles[row][cell].mates = find_neighbours(self.tiles,cell,row)
