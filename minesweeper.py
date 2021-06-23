@@ -2,7 +2,6 @@ from tkinter import Tk,Canvas
 from matrixFunctions import *
 import time
 
-
 class Tile():
     def __init__(self,row,cell,is_mine,canvas,tile_size) -> None:
         self.parent_canvas=canvas
@@ -38,11 +37,10 @@ class Tile():
                 self.is_marked = True
                 self.parent_canvas.itemconfig(self.tile,fill="blue")
                 return 1 if self.is_mine else 0
-
+    
     def fill(self,color):
-        self.parent_canvas.itemconfig(self.tile,fill=color)
-        
-
+        self.parent_canvas.itemconfig(self.tile,fill = color)
+    
     def restore_color(self):
         if self.is_open:
             if self.is_mine:
@@ -53,7 +51,7 @@ class Tile():
                 self.parent_canvas.itemconfig(self.tile,fill="green")
             else:
                 self.parent_canvas.itemconfig(self.tile,fill="white")
-        else: 
+        else:
             self.parent_canvas.itemconfig(self.tile,fill="gray")
 
 class Minesweeper():
@@ -82,7 +80,7 @@ class Minesweeper():
     def __init__(self,size_y,size_x,mine_dencity) -> None:
         self.TILE_SIZE = 20
         self.window = Tk()
-        self.canvas = Canvas(self.window,width=self.TILE_SIZE*size_x+2,height = self.TILE_SIZE*size_y+2)
+        self.canvas = Canvas(self.window,width=self.TILE_SIZE*size_x +2,height = self.TILE_SIZE*size_y+2)
         self.canvas.bind("<Button-1>",self.open_cell)
         self.canvas.bind("<Button-3>",self.mark_cell)
         self.canvas.pack()
@@ -98,36 +96,34 @@ class Minesweeper():
             for cell in range(size_x):
                 self.tiles[row][cell].mates = find_neighbours(self.tiles,cell,row)
                 self.tiles[row][cell].content = len([0 for m_row,m_cell in self.tiles[row][cell].mates if self.tiles[m_row][m_cell].is_mine])
-
 #<------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-#rewrite to use decorators
+#flood_fill
     def flood_fill_stack(self,tile):
         if not tile.is_open and tile.content==0:
-            stack=[tile]
+            stack = [tile]
             while stack:
-                target= stack.pop()
-                target.fill('yellow')
-                self.window.update()
-                time.sleep(0.05)
-                target.open()
                 
-                for y,x in target.mates:
-                    mate=self.tiles[y][x]
-                    
+                target = stack.pop()
+                target.open()
+                target.fill("yellow")
+                self.window.update()
+                time.sleep(0.1)
 
+                for y,x in target.mates:
+                    mate = self.tiles[y][x]
                     if not mate.is_open and mate.content==0:
                         stack.append(mate)
                     if not mate.is_open:
-                        mate.fill('violet')
+                        mate.fill("violet")
                         self.window.update()
-                        time.sleep(0.05)
+                        time.sleep(0.1)
                         mate.open()
                         mate.restore_color()
-
-
-
-
+                
                 target.restore_color()
+                
+
+    
     
 
 
@@ -135,7 +131,7 @@ class Minesweeper():
 
 
 if __name__=="__main__":
-    m = Minesweeper(35,70,5)
+    m = Minesweeper(40,50,5)
     """
     for row,x in enumerate(m.tiles):
         for cell,_ in enumerate(x):
