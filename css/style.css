@@ -1,7 +1,6 @@
-body{
+body {
   margin: 0;
 }
-
 
 .white-container {
   display: flex;
@@ -16,7 +15,6 @@ body{
   align-items: center;
   flex-direction: column;
 }
-
 
 .game-holder {
   background: red;
@@ -65,7 +63,7 @@ body{
   width: 100px;
   margin: 20px;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -75,6 +73,8 @@ body{
   background: white;
   margin: 20px;
 }
+
+/*sdfsdfsdfsdf*/
 
 .mine-cell {
   box-sizing: border-box;
@@ -93,29 +93,9 @@ body{
   border-collapse: collapse;
 }
 
+/*sdfsdfsdfsd*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.switch-holder{
+.switch-holder {
   display: flex;
   width: 10em;
   justify-content: space-between;
@@ -203,4 +183,66 @@ input:checked+.slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/*translations*/
+
+.super {
+  position: relative;
+  top:0;
+  left: 0;
+  background: white;
+  height: 100px;
+  width: 100px;
+  animation-duration: 5s;
+  animation-name: gradient;
+  animation-iteration-count: infinite;
+}
+
+@keyframes gradient {
+  from {
+    top:0;
+    left:0;
+    background: radial-gradient(circle 5px, red, blue);
+  }
+  10% {
+    background: radial-gradient(circle 10px, red, blue);
+  }
+  20% {
+    background: radial-gradient(circle 20px, red, blue);
+  }
+  25%{
+    left:-50%;
+  }
+  30% {
+    background: radial-gradient(circle 30px, red, blue);
+  }
+  40% {
+    background: radial-gradient(circle 40px, red, blue);
+  }
+  50% {
+    top:100%;
+    left:0;
+    background: radial-gradient(circle 50px, red, blue);
+  }
+  60% {
+    background: radial-gradient(circle 40px, red, blue);
+  }
+  70% {
+    background: radial-gradient(circle 30px, red, blue);
+  }
+  75% {
+    left:50%;
+  }
+  80% {
+    background: radial-gradient(circle 20px, red, blue);
+  }
+  90% {
+    background: radial-gradient(circle 10px, red, blue);
+  }
+  to {
+    left:0;
+    top:0;
+    background: radial-gradient(circle 5px, red, blue);
+  }
 }

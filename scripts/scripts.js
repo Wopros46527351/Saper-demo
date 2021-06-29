@@ -10,7 +10,6 @@ const hard = 15
 
 
 function toggleSound(){
-    alert(music);
     if (music){
         music = false;
         var image = document.getElementById("sound");
