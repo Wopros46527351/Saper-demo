@@ -5,10 +5,6 @@ const easy = 8
 const medium = 12
 const hard = 15
 
-class Tile(){
-    constructor()
-}
-
 
 
 
