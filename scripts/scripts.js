@@ -1,15 +1,31 @@
 let good = false;
 let fast = false;
 let cheap = false;
+let music=true;
+let timer_exists = false;
 const easy = 8
 const medium = 12
 const hard = 15
 
 
 
-
+function toggleSound(){
+    alert(music);
+    if (music){
+        music = false;
+        var image = document.getElementById("sound");
+        image.src = "https://png.pngtree.com/png-vector/20190228/ourmid/pngtree-sound-off-line-black-icon-png-image_709526.jpg";
+    }
+    else{
+        music = true;
+        var image = document.getElementById("sound");
+        image.src ='https://www.vhv.rs/dpng/d/436-4366373_volume-sound-png-download-audio-icon-transparent-background.png';
+    }
+}
 
 function hello() {
+    start_timer();
+    
     let elem = document.getElementById("minefield");
     if (elem !=null){
         elem.remove();
@@ -79,3 +95,21 @@ function s_good(){
     }
 }
 
+function start_timer(){
+    let elem = document.getElementById('timer');
+    elem.innerText = "00:00"
+    if(!timer_exists){
+        setInterval(Timer,1000);
+        timer_exists=true;
+    }
+    
+}
+function Timer(){
+    let elem = document.getElementById('timer');
+    var str = elem.innerText;
+    var str = str.split(":");
+    var min = parseInt(str[0]);
+    var sec = parseInt(str[1])+1;
+    var new_str = min.toString()+':'+sec.toString();
+    elem.innerText = new_str;
+}
