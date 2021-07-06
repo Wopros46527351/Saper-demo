@@ -114,14 +114,47 @@ function start_timer(){
 }
 
 function Timer(){
+    /*
     let elem = document.getElementById('timer');
     var str = elem.innerText;
     var str = str.split(":");
     var min = parseInt(str[0]);
     var sec = parseInt(str[1])+1;
+    if(sec==60){
+        sec=0;
+        min+=1;
+
+    }
+    if(sec<10){
+        sec='0'+str(sec);
+    }
+    if(min<10){
+        min='0'+str(min);
+    }
     var new_str = min.toString()+':'+sec.toString();
     elem.innerText = new_str;
+    */
+
+    let elem = document.getElementById('timer')
+    var str = elem.innerText;
+    var str = str.split(':');
+    var min = parseInt(str[0]);
+    var sec = parseInt(str[1]);
+    sec += 1
+    if (sec == 60) {
+        min += 1;
+        sec = 0;
+    }
+    if (min < 10) {
+        min = '0' + min.toString();
+    }
+    if (sec<10){
+        sec='0'+sec.toString();
+    }
+    var new_str = min + ':' + sec;
+    elem.innerText = new_str;
 }
+
 
 function Hello(x,y){
 alert(x.toString()+"-"+y.toString());
