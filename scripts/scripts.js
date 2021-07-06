@@ -1,16 +1,20 @@
 let good = false;
 let fast = false;
 let cheap = false;
-<<<<<<< HEAD
 let music=true;
 let timer_exists = false;
-=======
-let timer_exist = false;
->>>>>>> b5541a9d609fe236042dd318f6295ffa53551918
 const easy = 8
 const medium = 12
 const hard = 15
 
+class Tile{
+    constructor(x,y,is_mine){
+        this.x = x;
+        this.y = y;
+        this.is_mine = is_mine;
+        
+    }
+}
 
 
 function toggleSound(){
@@ -26,29 +30,25 @@ function toggleSound(){
     }
 }
 
-function hello() {
-<<<<<<< HEAD
-=======
-    
->>>>>>> b5541a9d609fe236042dd318f6295ffa53551918
+function Setup() {
     start_timer();
     
     let elem = document.getElementById("minefield");
-    if (elem != null) {
+    if (elem !=null){
         elem.remove();
     }
-
+    
     let select = document.getElementById("diff-select");
     let diff = select.value;
     let size_x;
     let size_y;
-    if (diff == "easy") {
+    if (diff == "easy"){
         size_x = easy;
         size_y = easy;
-    } else if (diff == "med") {
+    }else if (diff == "med"){
         size_x = medium;
         size_y = medium;
-    } else {
+    }else{
         size_x = hard;
         size_y = hard;
     }
@@ -62,10 +62,11 @@ function hello() {
         table.appendChild(row);
         for (let y = 0; y < size_y; y++) {
             let cell = document.createElement('td');
+            cell.onclick = function(){Hello(x,y);};
             cell.classList.add('mine-cell');
             cell.classList.add('mine-cell-inactive');
-            cell.style.height = (600 / size_y).toString() + "px";
-            cell.style.width = (600 / size_x).toString() + "px";
+            cell.style.height = (600/size_y).toString()+"px";
+            cell.style.width = (600/size_x).toString()+"px";
             cell.id = x.toString() + "-" + y.toString()
             let content = document.createTextNode(x.toString() + "-" + y.toString());
             cell.appendChild(content);
@@ -75,34 +76,33 @@ function hello() {
 }
 
 
-function s_cheap() {
+function s_cheap(){
     let elem = document.getElementById('cheap')
     cheap = elem.checked;
-    if (cheap && good && fast) {
+    if (cheap && good && fast){
         fast = false;
         document.getElementById('fast').checked = false;
     }
 }
 
-function s_fast() {
+function s_fast(){
     let elem = document.getElementById('fast')
     fast = elem.checked;
-    if (cheap && good && fast) {
+    if (cheap && good && fast){
         good = false;
         document.getElementById('good').checked = false;
     }
 }
 
-function s_good() {
+function s_good(){
     let elem = document.getElementById('good')
     good = elem.checked;
-    if (cheap && good && fast) {
+    if (cheap && good && fast){
         cheap = false;
         document.getElementById('cheap').checked = false;
     }
 }
 
-<<<<<<< HEAD
 function start_timer(){
     let elem = document.getElementById('timer');
     elem.innerText = "00:00"
@@ -112,6 +112,7 @@ function start_timer(){
     }
     
 }
+
 function Timer(){
     let elem = document.getElementById('timer');
     var str = elem.innerText;
@@ -121,37 +122,7 @@ function Timer(){
     var new_str = min.toString()+':'+sec.toString();
     elem.innerText = new_str;
 }
-=======
-function Timer() {
-    let elem = document.getElementById('timer')
-    var str = elem.innerText;
-    var str = str.split(':');
-    var min = parseInt(str[0]);
-    var sec = parseInt(str[1]);
-    sec += 1
-    if (sec == 60) {
-        min += 1;
-        sec = 0;
-    }
-    if (min < 10) {
-        min = '0' + min.toString();
-    }
-    if (sec < 10) {
-        sec = '0' + sec.toString();
-    }
-    var new_str = min + ':' + sec;
-    elem.innerText = new_str;
+
+function Hello(x,y){
+alert(x.toString()+"-"+y.toString());
 }
-function start_timer(){
-    let elem = document.getElementById('timer');
-    elem.innerText='00:00';
-    if(!timer_exist){
-        setInterval(Timer, 1000);
-        timer_exist=true;
-
-
-    }
-    
-}
-
->>>>>>> b5541a9d609fe236042dd318f6295ffa53551918

@@ -1,272 +1,250 @@
-h1{
-    background: aqua;
-    height: 3em;
-    width: 15em;
-    margin: 50px 25px 10px;
-    border: black solid 10px;
-    padding: 20px ;
-    text-align: center;
-    
+body {
+  margin: 0;
 }
-body{
-    margin: 0;
-    width:100%;
-    height:100%;
-    background-color: rgb(61, 117, 117);
-}
-tr{
-    background: rgb(204, 56, 19);
-}
-th{
-    
-    
-    border: black solid 5px;
-    padding: 20px ;
-    }
-td{
-    
-    
-    border: black solid 5px;
-    padding: 20px ;
-    
-}
-table{
-    border-collapse: collapse;
-    border: black solid 5px;
-    text-align: center;
-}
-.odd-row{
-    background: rgb(151, 120, 19);
 
-}
-.even-row{
-    background: rgb(175, 100, 15);
-
-}
-.super-colum{
-    font-weight: bold;
-    width: 200px;
-
-
-
-}
-#target{
-    font-weight: normal;
-}
-.red-box{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 500px;
-    height: 500px;
-    background-color: rgb(255, 0, 0);
-}
-.blue-box{
-    order: 3;
-    width: 100px;
-    height: 100px;
-    background-color: cornflowerblue;
-
-}
-.green-box{
-    order: 2;
-    width: 100px;
-    height: 100px;
-    background-color: rgb(31, 218, 46);
-}
-.yellow-box{
-    order: 1;
-    width: 100px;
-    height: 100px;
-    background-color: rgb(228, 237, 100);
-}
 .white-container {
-    display: flex;
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
-    justify-content: center;
-  }
-  
-  .gray-container {
-    display: flex;
-    background: gray;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  
-  .game-holder {
-    background: red;
-    width: 600px;
-    height: 700px;
-  }
-  
-  .description {
-    height: 700px;
-    width: 300px;
-    background: white;
-  }
-  
-  .game {
-    height: 600px;
-    width: 600px;
-    background: blue;
-  }
-  
-  .top-bar {
-    height: 100px;
-    width: 600px;
-    background: green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .diff-selector {
-    height: 50px;
-    width: 100px;
-    background: white;
-    margin: 20px;
-  }
-  
-  .button {
-    height: 50px;
-    width: 100px;
-    background: white;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .mine-counter {
-    height: 50px;
-    width: 100px;
-    background: white;
-    margin: 20px;
-  }
-  
+  display: flex;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  justify-content: center;
+}
 
-  
-  .sound {
-    height: 50px;
-    width: 100px;
-    margin: 20px;
-  }
-  
-  .mine-cell {
-    box-sizing: border-box;
-    border: solid black;
-  }
-  
-  .mine-cell-active {
-    background: white;
-  }
-  
-  .mine-cell-inactive {
-    background: gray;
-  }
-  
-  .minefield {
-    border-collapse: collapse;
-  }.white-container {
-    display: flex;
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
-    justify-content: center;
-  }
-  
-  .gray-container {
-    display: flex;
-    background: gray;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  
-  .game-holder {
-    background: red;
-    width: 600px;
-    height: 700px;
-  }
-  
-  .description {
-    height: 700px;
-    width: 300px;
-    background: white;
-  }
-  
-  .game {
-    height: 600px;
-    width: 600px;
-    background: blue;
-  }
-  
-  .top-bar {
-    height: 100px;
-    width: 600px;
-    background: green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .diff-selector {
-    height: 50px;
-    width: 100px;
-    background: white;
-    margin: 20px;
-  }
-  
-  .button {
-    height: 50px;
-    width: 100px;
-    background: white;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .mine-counter {
-    height: 50px;
-    width: 100px;
-    background: white;
-    margin: 20px;
-  }
-  
-  .timer {
-    height: 50px;
-    width: 100px;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.gray-container {
+  display: flex;
+  background: gray;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-  
-  
-  .sound {
-    height: 50px;
-    width: 100px;
-    background: white;
-    margin: 20px;
+.game-holder {
+  background: red;
+  width: 600px;
+  height: 700px;
+}
+
+.description {
+  height: 700px;
+  width: 300px;
+  background: white;
+}
+
+.game {
+  height: 600px;
+  width: 600px;
+  background: blue;
+}
+
+.top-bar {
+  height: 100px;
+  width: 600px;
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diff-selector {
+  margin: 20px;
+}
+
+.button {
+  margin: 20px;
+}
+
+.mine-counter {
+  height: 50px;
+  width: 100px;
+  background: white;
+  margin: 20px;
+}
+
+.timer {
+  height: 50px;
+  width: 100px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sound {
+  height: 50px;
+  width: 100px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*sdfsdfsdfsdf*/
+
+.mine-cell {
+  box-sizing: border-box;
+  border: solid black;
+}
+
+.mine-cell-active {
+  background: white;
+}
+
+.mine-cell-inactive {
+  background: gray;
+}
+
+.minefield {
+  border-collapse: collapse;
+}
+
+/*sdfsdfsdfsd*/
+
+.switch-holder {
+  display: flex;
+  width: 10em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* The switch - the box around the slider */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+#blue {
+  background-color: #2196F3;
+}
+
+input:focus+#blue {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+#red {
+  background-color: #f32121;
+}
+
+input:focus+#red {
+  box-shadow: 0 0 1px #f32121;
+}
+
+input:checked+#green {
+  background-color: #4bf321;
+}
+
+input:focus+#green {
+  box-shadow: 0 0 1px #4bf321;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*translations*/
+
+.super {
+  position: relative;
+  top:0;
+  left: 0;
+  background: white;
+  height: 100px;
+  width: 100px;
+  animation-duration: 5s;
+  animation-name: gradient;
+  animation-iteration-count: infinite;
+}
+
+@keyframes gradient {
+  from {
+    top:0;
+    left:0;
+    background: radial-gradient(circle 5px, red, blue);
   }
-  
-  .mine-cell {
-    box-sizing: border-box;
-    border: solid black;
+  10% {
+    background: radial-gradient(circle 10px, red, blue);
   }
-  
-  .mine-cell-active {
-    background: white;
+  20% {
+    background: radial-gradient(circle 20px, red, blue);
   }
-  
-  .mine-cell-inactive {
-    background: gray;
+  25%{
+    left:-50%;
   }
-  
-  .minefield {
-    border-collapse: collapse;
+  30% {
+    background: radial-gradient(circle 30px, red, blue);
   }
+  40% {
+    background: radial-gradient(circle 40px, red, blue);
+  }
+  50% {
+    top:100%;
+    left:0;
+    background: radial-gradient(circle 50px, red, blue);
+  }
+  60% {
+    background: radial-gradient(circle 40px, red, blue);
+  }
+  70% {
+    background: radial-gradient(circle 30px, red, blue);
+  }
+  75% {
+    left:50%;
+  }
+  80% {
+    background: radial-gradient(circle 20px, red, blue);
+  }
+  90% {
+    background: radial-gradient(circle 10px, red, blue);
+  }
+  to {
+    left:0;
+    top:0;
+    background: radial-gradient(circle 5px, red, blue);
+  }
+}
