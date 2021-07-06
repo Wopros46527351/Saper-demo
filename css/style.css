@@ -70,8 +70,10 @@ body {
 .sound {
   height: 50px;
   width: 100px;
-  background: white;
   margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /*sdfsdfsdfsdf*/

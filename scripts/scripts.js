@@ -7,6 +7,14 @@ const easy = 8
 const medium = 12
 const hard = 15
 
+class Tile{
+    constructor(x,y,is_mine){
+        this.x = x;
+        this.y = y;
+        this.is_mine = is_mine;
+        
+    }
+}
 
 
 function toggleSound(){
@@ -22,7 +30,7 @@ function toggleSound(){
     }
 }
 
-function hello() {
+function Setup() {
     start_timer();
     
     let elem = document.getElementById("minefield");
@@ -54,6 +62,7 @@ function hello() {
         table.appendChild(row);
         for (let y = 0; y < size_y; y++) {
             let cell = document.createElement('td');
+            cell.onclick = function(){Hello(x,y);};
             cell.classList.add('mine-cell');
             cell.classList.add('mine-cell-inactive');
             cell.style.height = (600/size_y).toString()+"px";
@@ -103,6 +112,7 @@ function start_timer(){
     }
     
 }
+
 function Timer(){
     let elem = document.getElementById('timer');
     var str = elem.innerText;
@@ -111,4 +121,8 @@ function Timer(){
     var sec = parseInt(str[1])+1;
     var new_str = min.toString()+':'+sec.toString();
     elem.innerText = new_str;
+}
+
+function Hello(x,y){
+alert(x.toString()+"-"+y.toString());
 }
