@@ -41,17 +41,12 @@
     <div class="white-container">
         <div class="game-holder">
             <div class="top-bar">
-                <div class="diff-selector">
-                    <select name = "diffs" id = "diff-select">
-                        <option value = "easy">Easy</option>
-                        <option value = "med" selected = "selected">Medium</option>
-                        <option value = "hard">Hard</option>
-                    </select>
-                </div>
                 <div class="button">
                     <button id="button" onclick="Setup();">Press</button>
                 </div>
-                <div class="mine-counter"></div>
+                <div class="mine-counter">
+                    <p id = "mine-counter">0</p>
+                </div>
                 <div class="timer">
                     <img src="https://img.icons8.com/ios/452/timer.png" width="25px">
                     <p id = timer>00:00</p>
