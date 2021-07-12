@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-
 <head>
     <title>Привет!</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <script type="text/javascript" src="./scripts/scripts.js"></script>
 </head>
-
 <body>
-
+    <!--
     <div class="gray-container">
-        <div class="super"></div>
+        <div class = "super"></div>
     </div>
+-->
 
 
-<!----
+<!--
     <div class="gray-container">
         <div class="switch-holder">
             <label class="switch">
-                <input type="checkbox" onchange="s_cheap()" id="cheap">
+                <input type="checkbox" onchange="s_cheap()" id = "cheap">
                 <span class="slider round" id="red"></span>
             </label>
             <p>Cheap</p>
         </div>
         <div class="switch-holder">
             <label class="switch">
-                <input type="checkbox" onchange="s_good()" id="good">
+                <input type="checkbox" onchange="s_good()" id = "good">
                 <span class="slider round" id="blue"></span>
             </label>
             <p>Good</p>
         </div>
         <div class="switch-holder">
             <label class="switch">
-                <input type="checkbox" onchange="s_fast()" id="fast">
+                <input type="checkbox" onchange="s_fast()" id = "fast">
                 <span class="slider round" id="green"></span>
             </label>
             <p>Fast</p>
@@ -42,28 +41,19 @@
     <div class="white-container">
         <div class="game-holder">
             <div class="top-bar">
-                <div class="diff-selector">
-                    <select name="diffs" id="diff-select">
-                        <option value="easy">Easy</option>
-                        <option value="med" selected="selected">Medium</option>
-                        <option value="hard">Hard</option>
-                    </select>
-                </div>
                 <div class="button">
-                    <button id="button" onclick="Setup()">Press</button>
+                    <button id="button" onclick="Setup();">Press</button>
                 </div>
-                <div class="mine-counter"></div>
+                <div class="mine-counter">
+                    <p id = "mine-counter">0</p>
+                </div>
                 <div class="timer">
-                    <img src='https://cdn3.iconfinder.com/data/icons/business-finance-vol-3-34/512/32_Stopwatch_time_timer-512.png'
-                        width="25px">
-                    <p id='timer'>00:00</p>
+                    <img src="https://img.icons8.com/ios/452/timer.png" width="25px">
+                    <p id = timer>00:00</p>
                 </div>
                 <div class="sound" onclick="toggleSound();">
                     <img id = 'sound' src="https://www.vhv.rs/dpng/d/436-4366373_volume-sound-png-download-audio-icon-transparent-background.png"
                     width="25px">
-
-
-
                 </div>
             </div>
             <div class="game" id="game-holder"></div>
