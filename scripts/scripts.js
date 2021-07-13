@@ -6,11 +6,13 @@ let timer_exists = false;
 let field = []
 let mine_count = 0
 let mine_chance = 10
+
 class Tile {
     constructor(x, y, is_mine, size) {
         this.x = x;
         this.y = y;
         this.is_mine = is_mine;
+        
         this.cell = document.createElement('td');
         this.cell.onclick = function () { Hello(x, y); };
         this.cell.classList.add('mine-cell');
