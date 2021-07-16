@@ -59,12 +59,25 @@ body{
     user-select: none;
 }
 .cell{
-    background: wheat;
     border: solid black 2px;
     text-align: center;
+    width: 60px;
+    height: 60px;
 }
 .cell-active{
     background: red;
+}
+.cell-closed{
+    background: wheat;
+}
+.cell-open-clear{
+    background: white;
+}
+.cell-open-near{
+    background: green;
+}
+.cell-mark{
+    background: blue;
 }
 .white{
     background: white;
