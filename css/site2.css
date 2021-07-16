@@ -1,0 +1,90 @@
+.van {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+}
+
+.photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    justify-content: center;
+    text-align: center;
+    max-width: 50vh;
+}
+
+.name {
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.about_me {
+    margin: 50px;
+    text-align: center;
+}
+
+.port {
+    text-align: center;
+    background-color: grey;
+    border-radius: 50px;
+    width: 100px;
+    height: 50px;
+    margin: auto auto 100px auto;
+    padding: 10px 30px;
+}
+
+.contacs {
+    text-align: center;
+}
+
+.seti {
+    display: flex;
+    justify-content: center;
+}
+
+.vk {
+    margin: 10px;
+}
+
+.gh {
+    margin: 10px;
+}
+
+.black {
+    width: 100%;
+    background: black;
+    max-height: 50vh;
+}
+
+.black_sp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.black_seti {
+    display: flex;
+    justify-content: center;
+}
+
+.black_text {
+    color: white;
+}
+
+.vk_bl {
+    margin: 10px;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.gh_bl {
+    margin: 10px;
+    background-color: white;
+    border-radius: 50px;
+}
