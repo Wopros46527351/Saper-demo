@@ -7,9 +7,10 @@
 }
 
 .cell {
-    background: wheat;
     border: solid black 2px;
     text-align: center;
+    width: 60px;
+    height: 60px;
 }
 
 .white {
@@ -26,8 +27,24 @@
     padding: 30px;
 }
 
+.cell-closed {
+    background: wheat;
+}
+
 .cell-active {
     background: red;
+}
+
+.cell-open-clear {
+    background: white;
+}
+
+.cell-open-near {
+    background: green;
+}
+
+.cell-mark {
+    background: blue;
 }
 
 .butt {
