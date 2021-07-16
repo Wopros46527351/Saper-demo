@@ -11,16 +11,18 @@ class Tile {
         this.cell.classList.add('cell');
         this.cell.classList.add('cell-closed');
         this.cell.id = x.toString() + "-" + i.toString();
-        this.cell.onclick = function () { click(x.toString() + "-" + i.toString(),false); };
+        this.cell.onclick = function() { click(x.toString() + "-" + i.toString(), false); };
         this.cell.innerText = " ";
         /*if(is_mine){
             this.cell.classList.add("cell-active");
         }*/
     }
 }
+
 function randomInt(num) {
     return Math.floor(Math.random() * num);
 }
+
 function Load() {
     big_papa = document.getElementById("parent");
     for (let x = 0; x < 10; x++) {
@@ -41,7 +43,7 @@ function Load() {
     alert(mine_counter)
 }
 
-function click(id,rec) {
+function click(id, rec) {
     let cell = document.getElementById(id);
     if (cell.classList.contains("cell-closed")) {
         cell.classList.remove("cell-closed");
@@ -52,23 +54,21 @@ function click(id,rec) {
         if (content < 0) {
             cell.classList.add("cell-active");
             return false;
-        }
-        else if (content == 0) {
+        } else if (content == 0) {
             cell.classList.add("cell-open-clear");
             cell.innerText = content;
-            if(!rec){
+            if (!rec) {
                 cell.classList.add("cell-closed");
                 flood_fill(id);
             }
             return true;
-        }
-        else if (content > 0) {
+        } else if (content > 0) {
             cell.classList.add("cell-open-near");
             cell.innerText = content;
             return false;
         }
-        
-    }else{
+
+    } else {
         return false;
     }
 
@@ -110,9 +110,9 @@ function flood_fill(id) {
     let stack = [id];
     while (stack.length > 0) {
         let elem = stack.pop();
-        let flag = click(elem,true)
+        let flag = click(elem, true);
         alert(flag);
-        if(flag){
+        if (flag) {
             let coords = elem.split("-");
             let y = parseInt(coords[0]);
             let x = parseInt(coords[1]);
@@ -120,7 +120,7 @@ function flood_fill(id) {
                 for (let dx = -1; dx <= 1; dx++) {
                     if (!(dx == 0 && dy == 0)) {
                         if (-1 < x + dx && x + dx < limitX && -1 < y + dy && y + dy < limitY) {
-                            stack.push((y+dy).toString() + "-" + (x+dx).toString());
+                            stack.push((y + dy).toString() + "-" + (x + dx).toString());
                         }
                     }
                 }
@@ -128,4 +128,3 @@ function flood_fill(id) {
         }
     }
 }
-
