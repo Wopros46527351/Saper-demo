@@ -75,16 +75,61 @@
 
 .black_text {
     color: white;
+    text-align: center;
+    margin: 10px;
 }
 
 .vk_bl {
     margin: 10px;
     background-color: white;
     border-radius: 50px;
+    width: 50px;
+    height: 50px;
 }
 
 .gh_bl {
     margin: 10px;
     background-color: white;
     border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.card {
+    width: 60%;
+    max-height: 150vh;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+    background: rgb(240, 216, 214);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.picture {
+    max-width: 35%;
+    text-align: center;
+    align-items: center;
+    margin: 60px;
+}
+
+.card-h {
+    text-align: center;
+    align-items: center;
+    margin: 60px;
+}
+
+.card-p {
+    text-align: center;
+    align-items: center;
+    margin: 60px;
+}
+
+.raz {
+    background-color: black;
+    border: dashed black 2px;
 }
