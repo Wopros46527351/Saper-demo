@@ -1,0 +1,57 @@
+#parent {
+    width: 600px;
+    height: 600px;
+    background: rgb(76, 76, 92);
+    border-collapse: collapse;
+    user-select: none;
+}
+
+.cell {
+    border: solid black 2px;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+}
+
+.white {
+    background: white;
+}
+
+.block {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+}
+
+.cell-closed {
+    background: wheat;
+}
+
+.cell-active {
+    background: red;
+}
+
+.cell-open-clear {
+    background: white;
+}
+
+.cell-open-near {
+    background: green;
+}
+
+.cell-mark {
+    background: blue;
+}
+
+.butt {
+    padding: 10px 30px;
+    background: black;
+    color: white;
+    border-radius: 50px;
+    width: min-content;
+    user-select: none;
+}

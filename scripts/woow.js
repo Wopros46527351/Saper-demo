@@ -111,7 +111,7 @@ function flood_fill(id) {
     while (stack.length > 0) {
         let elem = stack.pop();
         let flag = click(elem, true);
-        alert(flag);
+
         if (flag) {
             let coords = elem.split("-");
             let y = parseInt(coords[0]);
