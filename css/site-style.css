@@ -92,3 +92,47 @@ body{
     padding: 30px;
     min-height: 100vh;
 }
+
+.block-column{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    min-height: 100vh;
+}
+.card{
+    background: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 2px;
+    margin:30px 20%;
+    padding: 20px 50px;
+    width: 60%;
+}
+
+.card-image{
+    width: 20%;
+    display: inline-block;
+    box-sizing: border-box;
+    flex-shrink: 1;
+}
+
+.card-text{
+    margin-left: 50px;
+    width: 80%;
+    display: inline-block;
+    box-sizing: border-box;
+    flex-shrink: 100;
+}
+
+.vertical-hr{
+    height: 100px !important;
+    margin-left: 20px;
+    width: 5px;
+    border-radius: 2px;
+    border: solid black 5px;
+    border-width: 0px 0px 0px 5px;
+}
